@@ -1,8 +1,8 @@
 //var FORM_ID = '1UsmbeqAyXFf1uXpCTQvistEUX6phOTo7lDhwwz7i4ls';
 var SEL_STUDENT = "luiz.barbosa@zup.com.br";
-var SEND_MAIL = "danilo.lucena@zup.com.br, danilo.ribeiro@zup.com.br", "alberto.souza@zup.com.br";
+var SEND_MAIL = "danilo.lucena@zup.com.br, danilo.ribeiro@zup.com.br, alberto.tavares@zup.com.br";
 var FORM_ID = ['1CTpEsKnUpqXUqLHzsFIx4V7kGe5F6U56830U4YowfAY','1vYFCuQC3g2UVVFYqgw_EwG9O-fkzXBKF0Atho_WZaGo','1AcS9CUapi5lydtL0C4TUVpEGG8FG1ivHlw4GoX0CjD0'];
-
+var arrayMensage= [ ];
 
 function monitorRespostas() {
 
@@ -18,18 +18,25 @@ function monitorRespostas() {
   for (var i = 0; i < formResponses.length; i++) {
     var formResponse = formResponses[i];
 
+
     // aluno respondeu
     if (SEL_STUDENT == formResponse.getRespondentEmail()){
       Logger.log("Aluno respondeu: %s", formResponse.getRespondentEmail())
 
-      // envia email
-      MailApp.sendEmail(SEND_MAIL,
-        "[TESTE SCRIPT]O respondeu",
-        "Aviso que o estudante respondeu aqui");
+      arrayMensage.push("O estudante já respondeu o curso :"+form.getTitle() );
 
-      // remove os triggers para evitar múltiplos e-mails
-      //cancelTriggers();
-    } 
+      // envia email
+          } 
+             
+          // remove os triggers para evitar múltiplos e-mails
+          //cancelTriggers();
+  
+
+          }  
+          if(arrayMensage.length > 0){
+            MailApp.sendEmail(SEND_MAIL,
+             "Acompanhamento de estudante :"+SEL_STUDENT,
+             arrayMensage.toString() );
   }  
  }
 }  
