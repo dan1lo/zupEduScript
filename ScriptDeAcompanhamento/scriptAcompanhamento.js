@@ -1,7 +1,7 @@
 //var FORM_ID = '1UsmbeqAyXFf1uXpCTQvistEUX6phOTo7lDhwwz7i4ls';
 var SEL_STUDENT = "luiz.barbosa@zup.com.br";
-var SEND_MAIL = "danilo.lucena@zup.com.br, danilo.ribeiro@zup.com.br";
-var FORM_ID = ['1chMTqIb7oBIblNG_9yOl-UJlKuAXwalgVO_Pa-1XA9','1CTpEsKnUpqXUqLHzsFIx4V7kGe5F6U56830U4YowfAY','1wEMVUZ7J2UGEg4qu3UKQ8dFmZyuOgh9oPRUGDgIPfCs'];
+var SEND_MAIL = "danilo.lucena@zup.com.br, danilo.ribeiro@zup.com.br", "alberto.souza@zup.com.br";
+var FORM_ID = ['1CTpEsKnUpqXUqLHzsFIx4V7kGe5F6U56830U4YowfAY','1vYFCuQC3g2UVVFYqgw_EwG9O-fkzXBKF0Atho_WZaGo','1AcS9CUapi5lydtL0C4TUVpEGG8FG1ivHlw4GoX0CjD0'];
 
 
 function monitorRespostas() {
@@ -24,7 +24,7 @@ function monitorRespostas() {
 
       // envia email
       MailApp.sendEmail(SEND_MAIL,
-        "[TESTE SCRIPT] Estudante da semana respondeu",
+        "[TESTE SCRIPT]O respondeu",
         "Aviso que o estudante respondeu aqui");
 
       // remove os triggers para evitar múltiplos e-mails
