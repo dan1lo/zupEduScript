@@ -1,8 +1,7 @@
-var FORM_ID = '1UsmbeqAyXFf1uXpCTQvistEUX6phOTo7lDhwwz7i4ls';
+//var FORM_ID = '1UsmbeqAyXFf1uXpCTQvistEUX6phOTo7lDhwwz7i4ls';
 var SEL_STUDENT = "luiz.barbosa@zup.com.br";
 var SEND_MAIL = "danilo.lucena@zup.com.br, danilo.ribeiro@zup.com.br";
-
-var FORM_ID = ['',''];
+var FORM_ID = ['1chMTqIb7oBIblNG_9yOl-UJlKuAXwalgVO_Pa-1XA9','1CTpEsKnUpqXUqLHzsFIx4V7kGe5F6U56830U4YowfAY','1wEMVUZ7J2UGEg4qu3UKQ8dFmZyuOgh9oPRUGDgIPfCs'];
 
 
 function monitorRespostas() {
@@ -11,7 +10,9 @@ function monitorRespostas() {
   // exemplo de: https://developers.google.com/apps-script/reference/forms/form-response
   // form exemplo: https://docs.google.com/forms/d/1UsmbeqAyXFf1uXpCTQvistEUX6phOTo7lDhwwz7i4ls/edit 
 
-  var form = FormApp.openById(FORM_ID);
+  for (var j =0; i<FORM_ID.length; j++){
+
+  var form = FormApp.openById(FORM_ID[j]);
   var formResponses = form.getResponses();
 
   for (var i = 0; i < formResponses.length; i++) {
@@ -30,7 +31,8 @@ function monitorRespostas() {
       //cancelTriggers();
     } 
   }  
-}
+ }
+}  
 
 function cancelTriggers(){
   //Logger.log('Current project has ' + ScriptApp.getProjectTriggers().length + ' triggers.');
