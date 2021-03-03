@@ -10,7 +10,7 @@ function monitorRespostas() {
   // exemplo de: https://developers.google.com/apps-script/reference/forms/form-response
   // form exemplo: https://docs.google.com/forms/d/1UsmbeqAyXFf1uXpCTQvistEUX6phOTo7lDhwwz7i4ls/edit 
 
-  for (var j =0; i<FORM_ID.length; j++){
+  for (var j =0; j<FORM_ID.length; j++){
 
   var form = FormApp.openById(FORM_ID[j]);
   var formResponses = form.getResponses();
